@@ -15,7 +15,7 @@ import TopicMapComponent from "react-cismap/topicmaps/TopicMapComponent";
 import FeatureCollection from "react-cismap/FeatureCollection";
 import GenericInfoBoxFromFeature from "react-cismap/topicmaps/GenericInfoBoxFromFeature";
 import getGTMFeatureStyler from "react-cismap/topicmaps/generic/GTMStyler";
-
+import { MappingConstants } from "react-cismap";
 const host = "https://wupp-topicmaps-data.cismet.de";
 
 const getGazData = async (setGazData) => {
@@ -44,8 +44,47 @@ function App() {
   useEffect(() => {
     getGazData(setGazData);
   }, []);
+  const backgroundConfigurations = {
+    stadtplan: {
+      layerkey: "wupp-plan-live@90",
+      src: "/images/rain-hazard-map-bg/citymap.png",
+      title: "Stadtplan",
+    },
+    vector1: {
+      layerkey: "OMT_Klokantech_basic@100",
+      src: "/images/rain-hazard-map-bg/citymap.png",
+      title: "Stadtplan",
+    },
+    vector2: {
+      layerkey: "OMT_OSM_bright@100",
+      src: "/images/rain-hazard-map-bg/citymap.png",
+      title: "Stadtplan",
+    },
+  };
+  const backgroundModes = [
+    {
+      title: "Vektorbasierter Layer (Klokantech Basic)",
+      mode: "default",
+      layerKey: "vector1",
+    },
+    {
+      title: "Vektorbasierter Layer (OSM bright)",
+      mode: "default",
+      layerKey: "vector2",
+    },
+    {
+      title: "Stadtplan (RVR, zum Vergleich)",
+      mode: "default",
+      layerKey: "stadtplan",
+    },
+  ];
   return (
-    <TopicMapContextProvider>
+    <TopicMapContextProvider
+      backgroundConfigurations={backgroundConfigurations}
+      backgroundModes={backgroundModes}
+      referenceSystem={MappingConstants.crs3857}
+      referenceSystemDefinition={MappingConstants.proj4crs3857def}
+    >
       <TopicMapComponent gazData={gazData}></TopicMapComponent>
     </TopicMapContextProvider>
   );
