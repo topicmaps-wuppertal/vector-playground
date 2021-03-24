@@ -1,4 +1,4 @@
-# TopicMap für [ ____ ____ ____ ____ ] in Wuppertal
+# TopicMap Vector-Playground
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/topicmaps-wuppertal/vector-playground)
 
