@@ -80,6 +80,7 @@ function App() {
   ];
   return (
     <TopicMapContextProvider
+      appKey='VectorPlaygroundWuppertal.TopicMap'
       backgroundConfigurations={backgroundConfigurations}
       backgroundModes={backgroundModes}
       referenceSystem={MappingConstants.crs3857}
