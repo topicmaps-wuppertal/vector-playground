@@ -50,6 +50,11 @@ function App() {
       src: "/images/rain-hazard-map-bg/citymap.png",
       title: "Stadtplan",
     },
+    lbk: {
+      layerkey: "trueOrtho2020@75|OMT_Klokantech_basic@50",
+      src: "/images/rain-hazard-map-bg/ortho.png",
+      title: "Luftbildkarte",
+    },
     vector1: {
       layerkey: "OMT_Klokantech_basic@100",
       src: "/images/rain-hazard-map-bg/citymap.png",
@@ -77,6 +82,7 @@ function App() {
       mode: "default",
       layerKey: "stadtplan",
     },
+    { title: "Luftbildkarte", mode: "default", layerKey: "lbk" },
   ];
   return (
     <TopicMapContextProvider
