@@ -92,7 +92,7 @@ function App() {
       referenceSystem={MappingConstants.crs3857}
       referenceSystemDefinition={MappingConstants.proj4crs3857def}
     >
-      <TopicMapComponent maxZoom={22} gazData={gazData}></TopicMapComponent>
+      <TopicMapComponent maxZoom={22} gazData={gazData} locatorControl={true}></TopicMapComponent>
     </TopicMapContextProvider>
   );
 }
